@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Biomedical Data Science Lab">
+    <meta name="author" content="Biomedical Data Science Lab">
+
+    <title>Biomedical Data Science Lab</title>
+
+    <link rel="shortcut icon" href="assets/images/lab_icon.png">
+
+    <!-- Bootstrap -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Icons -->
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+
+    <style>
+        /* Set Font to Times New Roman */
+        body {
+            font-family: "Times New Roman", Times, serif;
+        }
+
+        h1, h2, h3, h4, h5, h6, p, a, span, li, td, th {
+            font-family: "Playfair Display", serif !important;
+        }
+
+        /* Styling for images */
+        .focus-img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        /* Styling for Video Section */
+        .video-section {
+            margin-top: 40px;
+            margin-bottom: 40px;
+        }
+
+        .video-section video {
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Styling for logos */
+        .logo-container {
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        .lab-logo {
+            width: 95px; /* Smaller size */
+            height: auto;
+            margin: 5px; /* Adjust spacing between logos */
+        }
+    </style>
+</head>
+<body class="home">
+
+    <header id="header">
+        <div id="head" class="parallax" parallax-speed="2">
+            <h1 id="logo" class="text-center">
+                <span class="title">Welcome to Biomedical Data Science Lab</span>
+            </h1>
+            
+            <!-- Logo Container Moved Below -->
+            <div class="logo-container">
+                <img class="lab-logo" src="images/iiserb_logo-modified.png" alt="IISER Bhopal Logo">
+                <img class="lab-logo" src="images/dse_logo-modified.png" alt="DSE Logo">
+            </div>
+            
+            <!-- Institute Name Below the Logos -->
+            <h4 class="subtitle text-center">Indian Institute of Science Education and Research, Bhopal</h3>
+            <h5 class="subtitle text-center">Department of Data Science and Engineering</h3>
+
+            </div>
+
+    
+        <nav class="navbar navbar-default navbar-sticky">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> 
+                        <span class="sr-only">Toggle navigation</span> 
+                        <span class="icon-bar"></span> 
+                        <span class="icon-bar"></span> 
+                        <span class="icon-bar"></span> 
+                    </button>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="index.html">Home</a></li>
+                        <li><a href="about.html">Team Members</a></li>
+                        <li><a href="research.html">Research</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>        
+            </div>  
+        </nav>
+    </header>
+    
+
+<main id="main">
+    <div class="container">
+        
+        <div class="row section topspace">
+            <div class="col-md-12">
+                <p class="lead text-center text-muted">
+                    The NLP group at IISERB aims to facilitate biomedical discovery by developing, evaluating, and applying novel informatics methods and software to extract, compile and analyze heterogeneous clinical text data. The group has worked on a variety of challenges faced in the clinical NLP domain including Named entity recognition, text mining and sentiment analysis, Machine Learning, and many more.
+                </p>
+            </div>
+        </div>
+
+        <!-- Lab Video Section -->
+        <div class="row section video-section text-center">
+            <h2 class="section-title"><span>Inside Our Lab</span></h2>
+            <video width="800" height="450" controls>
+                <source src="videos/bds_lab_final.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <!-- End of Lab Video Section -->
+
+        <div class="row section featured topspace">
+            <h2 class="section-title"><span>Our Focus Areas</span></h2>
+            <div class="row">
+                <div class="col-sm-6 col-md-3">
+                    <h3 class="text-center">Automatic Tumor Contouring</h3>
+                    <img src="images/tumor.jpg" alt="Automatic Tumor Contouring" class="focus-img">
+                    <p>Head and Neck Cancer (HNC) is the most common cancer in India, with over 500,000 new cases worldwide annually. Radiation therapy is frequently recommended, but requires precise segmentation of tumors in CT scans. This process is labor-intensive and prone to inter-observer variability. We aim to develop a deep learning-based image segmentation framework for automatic tumor contouring to improve accuracy and efficiency in radiotherapy planning.</p>
+                </div>
+                <div class="col-sm-6 col-md-3">
+                    <h3 class="text-center">Biomedical Literature Mining</h3>
+                    <img src="images/text.jpg" alt="Biomedical Literature Mining" class="focus-img">
+                    <p>Biomedical literature contains valuable domain-specific knowledge. Our research focuses on NLP techniques for automated information extraction, knowledge graph construction, and biomarker identification. We develop transformer-based models to analyze PubMed and other biomedical sources for efficient knowledge discovery.</p>
+                </div>
+                <div class="col-sm-6 col-md-3">
+                    <h3 class="text-center">Knowledge Discovery in Social Media</h3>
+                    <img src="images/knowledge.jpg" alt="Social Media for Healthcare" class="focus-img">
+                    <p>Social media platforms provide real-time insights into public health trends. Our research aims to develop NLP frameworks to analyze social media data for early detection of disease outbreaks, mental health issues, and healthcare access challenges. We employ machine learning models to extract meaningful patterns and predict public health concerns.</p>
+                </div>
+                <div class="col-sm-6 col-md-3">
+                    <h3 class="text-center">Clinical Text Mining</h3>
+                    <img src="images/clinic.jpg" alt="Clinical Text Mining" class="focus-img">
+                    <p>Clinical notes contain crucial information about patients, including diagnoses, medications, and treatment plans. We develop NLP frameworks for automated text mining from clinical reports to support early disease prediction, adverse event detection, and improved patient care. Our research also integrates image and text-based analysis for enhanced radiology diagnostics.</p>
+                </div>
+            </div>
+        </div> <!-- / section -->
+
+        <div class="col-md-12">
+            <p>We publish cutting-edge research in leading journals and conferences. Check out our <a href="research.html">Research</a> section for more details.</p>
+        </div>
+
+    </div>  <!-- /container -->
+</main>
+
+<!-- JavaScript libs -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="assets/js/template.js"></script>
+
+<footer id="footer">
+    <p>Biomedical Data Science Lab at IISER Bhopal</p>
+    <p>© 2025 BDS Group.</p>
+</footer>
+
+</body>
+</html>
