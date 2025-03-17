@@ -1,3 +1,4 @@
+// Team.tsx
 import { motion } from 'framer-motion';
 import PhotoCarousel from '../components/PhotoCarousel';
 
@@ -8,7 +9,7 @@ export default function Team() {
       role: "Assistant Professor, IISER Bhopal",
       specialization: "AI in Healthcare, Predictive Analytics",
       email: "tanmay@iiserb.ac.in",
-      image: "images/tanmay.jpg"
+      image: "/images/tanmay.jpg"
     },
     phdScholars: [
       {
@@ -16,21 +17,21 @@ export default function Team() {
         research: "Medical Image Segmentation",
         email: "prateek24@iiserb.ac.in",
         scholarProfile: "https://scholar.google.com/citations?hl=en&user=WkTHFiIAAAAJ",
-        image: "images/prateek.jpg"
+        image: "/images/prateek.jpg"
       },
       {
         name: "Mr. Rasel Mondal",
         research: "Medical Image segmentation",
         email: "rasel23@iiserb.ac.in",
         scholarProfile: "https://scholar.google.com/citations?hl=en&user=lSnr930AAAAJ",
-        image: "images/Rasel Mondal.jpg"
+        image: "/images/rasel.jpg"
       },
       {
         name: "Mr. Sumit Kumar",
         research: "Medical Image segmentation",
         email: "sumit23@iiserb.ac.in",
         linkedIn: "https://www.linkedin.com/in/sumit-kumar-787203178",
-        image: "images/Sumit_Kumar.jpg"
+        image: "/images/sumit.jpg"
       }
     ],
     undergrads: [
@@ -38,32 +39,32 @@ export default function Team() {
         name: "Srutanik Bhaduri",
         research: "Intracranial Hemorrhage Detection and Classification from CT Scans",
         email: "srutanik21@iiserb.ac.in",
-        image: "images/srutanik.jpg"
+        image: "/images/srutanik.jpg"
       },
       {
         name: "Saisab Sadhu",
         research: "NLP-Based Inflation Index Generation for Interest Rate Risk Prediction",
         email: "saisa21@iiserb.ac.in",
-        image: "images/saisab.jpg"
+        image: "/images/saisab.jpg"
       },
       {
         name: "Ashim Dhor",
         research: "A Deep Learning Framework to Identify Glands in Histopathology Images",
         email: "ashim21@iiserb.ac.in",
         scholarProfile: "https://scholar.google.com/citations?user=KnN80Q4AAAAJ&hl=en",
-        image: "images/ashim.jpg"
+        image: "/images/ashim.jpg"
       },
       {
         name: "Ramavath Tharun",
         research: "A NLP Framework to Identify the Potential of Ginger for Arthritis Treatment",
         email: "ramavath21@iiserb.ac.in",
-        image: "images/tharun.jpg"
+        image: "/images/tharun.jpg"
       },
       {
         name: "Vishwaraj Chavan",
         research: "Towards Developing a Novel Framework for Chest CT Multi-Label Classification",
         email: "chavan21@iiserb.ac.in",
-        image: "images/vishwaraj.jpg"
+        image: "/images/vishwaraj.jpg"
       }
     ],
     alumni: [
@@ -71,25 +72,25 @@ export default function Team() {
         name: "Ms Shraddha Agarwal",
         current: "Currently MBA student at Indian Institute of Management Calcutta",
         linkedIn: "https://in.linkedin.com/in/shraddha-agarwal-98743320a",
-        image: "images/shraddha.jpg"
+        image: "/images/shraddha.jpg"
       },
       {
         name: "Ms. Archana Yadav",
         current: "Currently Graduate Researcher at Stowers Institute for Medical Research USA",
         github: "https://github.com/A-2809",
-        image: "images/archana.jpg"
+        image: "/images/archana.jpg"
       },
       {
         name: "Mr. Hritik Bana",
         current: "Currently pursuing PhD in Economics at Rice University USA",
         linkedIn: "https://in.linkedin.com/in/hritik-bana",
-        image: "images/hritik.jpg"
+        image: "/images/hritik.jpg"
       },
       {
-        name: "Mr. Arkapal Panda",
+        name: "Mr. Anirban Dutta",
         current: "Currently PhD Scholar at Indian Statistical Institute Kolkata",
-        linkedIn: "https://in.linkedin.com/in/arkapal-panda-1166621ab",
-        image: "images/arkapal.jpg"
+        linkedIn: "https://in.linkedin.com/in/anirban-dutta",
+        image: "/images/anirban.jpg"
       }
     ]
   };
@@ -104,6 +105,7 @@ export default function Team() {
           <PhotoCarousel />
         </div>
 
+        {/* Rest of the sections remain unchanged */}
         {/* Supervisor Section */}
         <section className="mb-16">
           <h2 className="text-2xl font-semibold mb-8">Supervisor</h2>
@@ -201,7 +203,7 @@ export default function Team() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.2 }}
-                className="bg-white p-6 rounded-lg shadow-lg"
+                className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-all"
               >
                 <div className="flex flex-col items-center text-center">
                   <div className="w-32 h-32 rounded-full overflow-hidden mb-4">
@@ -247,7 +249,7 @@ export default function Team() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.2 }}
-                className="bg-white p-6 rounded-lg shadow-lg"
+                className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-all"
               >
                 <div className="flex flex-col items-center text-center">
                   <div className="w-32 h-32 rounded-full overflow-hidden mb-4">

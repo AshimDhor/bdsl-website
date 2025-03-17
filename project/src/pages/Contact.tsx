@@ -21,10 +21,10 @@ export default function Contact() {
               <div className="flex items-start gap-4">
                 <MapPin className="w-6 h-6 text-blue-600 flex-shrink-0" />
                 <p className="text-gray-600">
-                  Office 301, Lab 311A, Therm Building,<br />
-                  Department of Data Science and Engineering,<br />
-                  IISER Bhopal, Bhopal, Madhya Pradesh,<br />
-                  India - 462066
+                  Department of Data Science and Engineering<br />
+                  Indian Institute of Science Education and Research Bhopal<br />
+                  Indore Bypass Road, Bhauri<br />
+                  462066, MP, India
                 </p>
               </div>
 
