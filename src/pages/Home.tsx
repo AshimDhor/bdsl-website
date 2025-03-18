@@ -6,9 +6,9 @@ import Typewriter from 'typewriter-effect';
 import FocusAreaModal from '../components/FocusAreaModal';
 
 const backgroundImages = [
-  '/images/histopath.jpg',
-  '/images/hemorrhage.png',
-  '/images/lungs.png'
+  'public/images/histopath.jpg',
+  'public/images/hemorrhage.png',
+  'public/images/lungstum.png'
 ];
 
 const focusAreas = [
