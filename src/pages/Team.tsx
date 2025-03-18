@@ -11,6 +11,14 @@ export default function Team() {
       email: "tanmay@iiserb.ac.in",
       image: "/images/tanmay.jpg"
     },
+    postDocs: [
+      {
+        name: "Dr. Anirban Tarafdar",
+        research: "Medical Image Analysis",
+        email: "anirban@iiserb.ac.in",
+        image: "/images/anirban.jpg"
+      }
+    ],
     phdScholars: [
       {
         name: "Mr. Prateek Sarangi",
@@ -87,10 +95,10 @@ export default function Team() {
         image: "/images/hritik.jpg"
       },
       {
-        name: "Mr. Anirban Dutta",
+        name: "Mr. Arkapal Panda",
         current: "Currently PhD Scholar at Indian Statistical Institute Kolkata",
-        linkedIn: "https://in.linkedin.com/in/anirban-dutta",
-        image: "/images/anirban.jpg"
+        linkedIn: "https://www.linkedin.com/in/arkapal-panda",
+        image: "/images/face.jpeg"
       }
     ]
   };
@@ -105,7 +113,6 @@ export default function Team() {
           <PhotoCarousel />
         </div>
 
-        {/* Rest of the sections remain unchanged */}
         {/* Supervisor Section */}
         <section className="mb-16">
           <h2 className="text-2xl font-semibold mb-8">Supervisor</h2>
@@ -135,6 +142,42 @@ export default function Team() {
               </div>
             </div>
           </motion.div>
+        </section>
+
+        {/* Post-Docs Section */}
+        <section className="mb-16">
+          <h2 className="text-2xl font-semibold mb-8">Post-Docs</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {teamMembers.postDocs.map((postDoc, index) => (
+              <motion.div
+                key={postDoc.name}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.2 }}
+                className="bg-white p-6 rounded-lg shadow-lg"
+              >
+                <div className="flex flex-col items-center text-center">
+                  <div className="w-32 h-32 rounded-full overflow-hidden mb-4">
+                    <img 
+                      src={postDoc.image} 
+                      alt={postDoc.name}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <h3 className="text-lg font-semibold">{postDoc.name}</h3>
+                  <p className="text-gray-600 mb-2">{postDoc.research}</p>
+                  <div className="flex gap-4">
+                    <a 
+                      href={`mailto:${postDoc.email}`}
+                      className="text-blue-600 hover:text-blue-800"
+                    >
+                      Email
+                    </a>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </section>
 
         {/* PhD Scholars Section */}
