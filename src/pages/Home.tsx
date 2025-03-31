@@ -1,8 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, Brain, BookOpen, Activity } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
-import Typewriter from 'typewriter-effect';
+import { useNavigate, useLocation } from 'react-router-dom';
 import FocusAreaModal from '../components/FocusAreaModal';
 
 const backgroundImages = [
@@ -10,7 +9,6 @@ const backgroundImages = [
   '/images/braintumour.png',
   '/images/lungstum.jpg',
   '/images/nlpusecase.png'
-
 ];
 
 const focusAreas = [
@@ -38,6 +36,20 @@ export default function Home() {
   const [selectedArea, setSelectedArea] = useState<number | null>(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const navigate = useNavigate();
+  const location = useLocation();
+
+  // Reset scroll position when component mounts
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
+
+  // Preload images
+  useEffect(() => {
+    backgroundImages.forEach(src => {
+      const img = new Image();
+      img.src = src;
+    });
+  }, []);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -52,64 +64,44 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center">
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-to-b from-black/80 to-black opacity-85"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-black/70 to-black opacity-75"></div>
           <AnimatePresence mode="wait">
-            <motion.img
+            <motion.div
               key={currentImageIndex}
-              src={backgroundImages[currentImageIndex]}
-              alt="Background"
               initial={{ opacity: 0 }}
-              animate={{ opacity: 0.4 }}
+              animate={{ opacity: 0.3 }} 
               exit={{ opacity: 0 }}
-              transition={{ duration: 1 }}
-              className="w-full h-full object-cover"
-              style={{
-                objectPosition: '50% 40%'
-              }}
-            />
+              transition={{ duration: 0.3 }}
+              className="w-full h-full"
+            >
+              <img
+                src={backgroundImages[currentImageIndex]}
+                alt="Background"
+                className="w-full h-full object-cover blur-sm" 
+                loading="eager"
+              />
+            </motion.div>
           </AnimatePresence>
         </div>
         
-        <div className="relative z-10 text-center px-4 max-w-5xl mx-auto">
+        <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="backdrop-blur-sm bg-black/30 rounded-3xl p-8 border border-gray-700"
+            className="bg-black/50 backdrop-blur-md rounded-2xl p-8 shadow-xl" 
           >
-            <div className="mb-8 flex flex-col items-center">
-              <div className="relative">
-                <h2 className="text-6xl md:text-8xl font-bold text-white mb-4 font-sans tracking-tight">AI for</h2>
-                <div className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 text-transparent bg-clip-text font-sans tracking-tight text-center min-h-[120px] flex items-center justify-center">
-                  <Typewriter
-                    options={{
-                      strings: [
-                        'Cancer',
-                        'Hemorrhage',
-                        'Stroke',
-                        'Radiology',
-                        'Report Generation',
-                        'Medical Text'
-                      ],
-                      autoStart: true,
-                      loop: true,
-                      delay: 50,
-                      deleteSpeed: 30
-                    }}
-                  />
-                </div>
-              </div>
-            </div>
-            <h1 className="text-5xl md:text-7xl font-bold mb-4 text-white font-sans tracking-tight bg-gradient-to-b from-white to-gray-300 text-transparent bg-clip-text">
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 text-white">
               Biomedical Data Science Lab
             </h1>
-            <p className="text-2xl md:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400 mb-8 font-sans tracking-tight">@IISERB</p>
-            <p className="text-xl md:text-2xl text-gray-200 mb-8 font-serif tracking-normal">
-              Advancing healthcare through AI and data science innovations at IISER Bhopal
+            <p className="text-2xl md:text-3xl font-bold text-white mb-8 tracking-wider">IISERB</p>
+            <p className="text-lg md:text-xl text-gray-200 mb-12 max-w-2xl mx-auto">
+              Advancing healthcare through artificial intelligence and data science innovations. 
+              Our research focuses on medical imaging, clinical text analysis, and biomedical literature mining.
             </p>
             <button 
               onClick={() => navigate('/research')}
-              className="group bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg transition-all duration-300 flex items-center gap-2 mx-auto"
+              className="group bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg transition-all duration-300 flex items-center gap-2 mx-auto text-lg"
             >
               Explore Our Research
               <ArrowRight className="group-hover:translate-x-1 transition-transform" />
@@ -118,7 +110,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Rest of the sections remain unchanged */}
       {/* Research Focus Areas */}
       <section className="py-20 px-4 bg-gray-50">
         <div className="max-w-7xl mx-auto">
@@ -158,28 +149,20 @@ export default function Home() {
         )}
       </section>
 
-        {/* Lab Video Section */}
-        <section className="py-20 px-4">
+      {/* Lab Video Section */}
+{/* Lab Video Section */}
+<section className="py-20 px-4">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-16">Inside Our Lab</h2>
-          <div className="aspect-w-16 aspect-h-9 rounded-xl overflow-hidden shadow-lg mb-4">
-            <iframe
-              src="https://www.youtube.com/embed/ArjP3hiCtuQ"
+          <div className="aspect-w-16 aspect-h-9 rounded-xl overflow-hidden shadow-lg">
+            <iframe 
+              src="https://www.youtube.com/embed/ArjP3hiCtuQ" 
               title="Lab Video"
               className="w-full h-full"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
               allowFullScreen
             ></iframe>
           </div>
-          <a 
-            href="https://youtu.be/ArjP3hiCtuQ" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="text-blue-600 hover:text-blue-800 transition-colors inline-flex items-center gap-2"
-          >
-            Watch on YouTube
-            <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
-          </a>
         </div>
       </section>
     </div>

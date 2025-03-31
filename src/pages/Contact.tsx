@@ -1,7 +1,15 @@
 import { motion } from 'framer-motion';
+import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import { Mail, Phone, MapPin, Clock } from 'lucide-react';
 
 export default function Contact() {
+  const location = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
+
   return (
     <div className="pt-24 pb-16 px-4">
       <div className="max-w-7xl mx-auto">
